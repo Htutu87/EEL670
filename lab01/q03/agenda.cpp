@@ -27,7 +27,7 @@ void Agenda::getNames(){
 }
 
 string Agenda::checkNames(string name){
-
+    
     if (name.length() > 10){
         name = name.substr(0, 10);
         cout << "Invalid name." << endl;
