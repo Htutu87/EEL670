@@ -2,8 +2,17 @@
 // Período 2021.1 - Laboratório 03 - Exercício avaliado 01
 // Autor: Artur Amaral
 
+#ifndef COVID_DATA_H
+#define COVID_DATA_H
+
 #include <string>
 #include <array>
+#include <iostream>
+#include <iomanip>
+
+#define CRESCENTE 1
+#define ESTAVEL 0
+#define DECRESCENTE -1
 
 using namespace std;
 
@@ -16,11 +25,11 @@ class Estadual {
         double mediaMovel;
 
     public:
-        Estadual(string /*nomeDoEstado*/, uint /*tendenciaDaSerie*/);  // Responsavel por inicializar o nome e a serie histórica do objeto. Dependendo do terceiro argumento, a serie gerada será crescente, decrescente ou estável.
+        Estadual(string /*nomeDoEstado*/, int /*tendenciaDaSerie*/);  // Responsavel por inicializar o nome e a serie histórica do objeto. Dependendo do terceiro argumento, a serie gerada será crescente, decrescente ou estável.
         void getSerieHistorica(array <uint, comprimentoDaSerie> &);
-        void setNome(string);                                           //-|-> Invocadas pelo construtor
+        string getNome();                                       
         double calcularMediaMovel(uint /*intervaloDeDiasCalculado*/); 
-        int obterTendendica();                                              // Vai calular a média móvel para do dia atual e penultimo dia, de modo a calcular a razao entre ambas e definir a tendencia do estado.
+        int obterTendencia();                                              // Vai calular a média móvel para do dia atual e penultimo dia, de modo a calcular a razao entre ambas e definir a tendencia do estado.
         uint calcularObitosAcumulados();
 
 };
@@ -45,3 +54,5 @@ class Nacional{
 
 
 };
+
+#endif
