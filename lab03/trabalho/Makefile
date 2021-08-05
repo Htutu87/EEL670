@@ -3,8 +3,8 @@
 CC = g++
 CFLAGS = -Wall
 
-DEPS = estadual.h nacional.h dependencias.h
-OBJ = main.o estadual.o nacional.o
+DEPS = covidData.h
+OBJ = main.o covidData.o
 EXECS = covidData
 
 %.o: %.c $(DEPS)

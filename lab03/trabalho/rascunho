@@ -1,0 +1,111 @@
+
+RASCUNHO.
+
+
+DESCRIÇÃO DO PROGRAMA:
+
+É um programa com menu, que apresenta dados referentes à covid19.
+
+O menu possui 5 opções:
+
+1 - Exibir a evolução no Brasil e estados individualmente, utilizando a média móvel dos últimos N dias.
+
+        mediaMovel =  (1/N) * somatório(blablabla)
+
+    O mínimo exibido para a média móvel será de 3 dias.
+    
+    Assumir que o programa tem acesso a dados referentes ao número de óbitos diários por
+    estado por um intervalo maior que N+1 e que N é no máximo igual a 7;
+
+2 - Exibir de forma agrupada estados em ALTA, ESTABILIDADE e em BAIXA.
+
+    As definições são dadas pela razão entre a média móvel de hoje (N) e de ontem (N-1)
+
+    Se mmHoje/mmOntem > 10% ALTA
+    Se mmHoje/mmOntem < 10% BAIXA
+    Senão ESTABILIDADE
+
+3 - Repetir a mesma informação do item anterior (alta, etc) para o Brasil.
+
+4 - Exibir estado com maior alta e maior baixa, segundo média movel do dia atual.
+
+5 - Exibir os dados acumulados de número de óbitos (soma desde o início do período
+de observação) no Brasil e nos estados individualmente.
+
+Implementação:
+
+Classe Nacional{}; -> Composta por M objetos da classe estadual. (Atributo array de objetos dessa classe. array <Estadual, 27> estados).
+Classe Estadual{};
+
+Cada objeto da classe Estadual representa um estado, contendo e gerenciando seus dados próprios.
+Dados da série histórica podem ser arbitrários.
+Os dados podem ser inicializados na instanciação dos objetos, não sendo necessário fornecer uma implementação para mudança deles em tempo de execução.
+
+Rascunho da implementação:
+
+... main
+
+    Estadual SP;
+    Estadual RJ;
+    Estadual GO;
+    Estadual DF;
+    ...
+...
+
+
+class Nacional{
+
+    public:
+
+    private;
+
+        array <Estadual, NUMERO_ESTADOS_BRASILEIROS> estados;
+        array <Unsigned, NUMERO_DIAS_REGISTRO_OBITOS> serieHistoricaBrasil; -> Cada dia da série histórica brasileira corresponde a soma dos estados naquele mesmo dia.
+
+            Estadual SP;
+            Estadual RJ;
+            Estadual GO;
+            Estadual DF;
+
+        computarSerieHistoricaNacional();
+
+};
+
+
+
+
+
+
+DÚVIDAS:
+
+- O qué o dia atual.
+- Como calcula-se a média móvel.
+- Qual exatamente é a esturtura de dados que representa os casos para cada estado/ Brasil.
+    Como gerá-las e com que critério?
+
+
+
+
+
+
+
+
+
+
+
+Class Estadual {
+
+    public:
+        Estadual(string /*nomeDoEstado*/, uint /*comprimentoDaSeriaHistorica*/, uint /*tendenciaDaSerie*/); 
+                // Responsavel por inicializar o nome e a serie histórica do objeto. Dependendo do terceiro argumento,
+                // a serie gerada será crescente, decrescente ou estável.
+        void getSerieHistorica(array & /*bufferSerieHistorica*/ );
+
+
+
+
+    private:
+        string nome;
+        array <uint,comprimentoDaSeriaHistorica> serieHistorica;
+
+};
