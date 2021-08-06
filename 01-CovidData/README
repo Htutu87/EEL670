@@ -1,0 +1,27 @@
+--- Exercício avaliado 01 ---
+Disciplina: EEE670 Linguagens de programação.
+Prof.: Miguel Campista
+Autor: Artur Amaral | DRE: 119057968
+Data: 06/08/2021
+-----------------------------
+
+-- Descrição do programa --
+
+- O programa é um painel interativo sobre dados de covid-19.
+- Existem séries históricas que informam a evolução do número de óbitos pela doença no Brasil,
+e o usuário pode executar algumas opções para obter informações relevantes a partir dos dados.
+
+-- Compilando e executando o programa --
+
+- Baixe os arquivos enviados pelo classroom e armazene-os em uma pasta própria.
+- A intenção do arquivo é ser executado via linha de comando (shell).
+
+- Vá para o diretório dos arquivos, através do shell.
+- Para compilar, pode-se inserir dois comandos diferentes:
+    'make' ou
+    'make covidData'
+
+Para deletação de arquivos, existem os seguintes comandos:
+    'make clean'        -> Deleta arquivos objeto (É chamado automaticamente após toda compilação).
+    'make cleanExecs'   ->
+    'make cleanAll'     -> Realiza ambas as operações acima.
