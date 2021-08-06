@@ -167,6 +167,8 @@ int main ()
             getline(cin, stringEntrada);
         }
 
+        operacaoEscolhida = 'A';
+
     }
 
     return 0;
