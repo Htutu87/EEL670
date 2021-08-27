@@ -11,12 +11,17 @@ class Grafo{
     public:
         Grafo();  
         void printarVertices();
+        void printarArestas();
+        unsigned getQuantidadeVertices();
+        unsigned getQuantidadeArestas();
+        void mostrarMaiorCentralidadeDeGrau();
+
     private:
         vector<Aresta> arestas;
         vector<Vertice> vertices;
         
         void inserirAresta(Aresta);
         void registrarVertice(Vertice); 
-        unsigned verficarExistenciaDoVertice(string, unsigned*);       
+        unsigned verificarExistenciaDoVertice(Vertice);
 };
 

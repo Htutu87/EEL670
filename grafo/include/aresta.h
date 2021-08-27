@@ -13,6 +13,7 @@ class Aresta{
         Vertice getVerticeOrigem();
         Vertice getVerticeDestino();
         double getCusto();
+        void exibirNaTela();
 
     private:
         Vertice verticeOrigem;

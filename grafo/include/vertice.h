@@ -12,8 +12,12 @@ class Vertice{
         Vertice();
         Vertice(string);
         string getNome();
-        void setNome(string);
+        void setNome(string);        
+        void setCentralidadeDeGrau(unsigned);
+        unsigned getCentralidadeDeGrau();
+                
     private:
         string nome;
+        unsigned centralidadeDeGrau;
 
 };

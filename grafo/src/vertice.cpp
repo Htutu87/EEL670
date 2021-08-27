@@ -8,6 +8,7 @@
 
 Vertice::Vertice(string _nome){
     setNome(_nome);
+    setCentralidadeDeGrau(0);
 }
 
 Vertice::Vertice(){
@@ -20,4 +21,12 @@ string Vertice::getNome(){
 
 void Vertice::setNome(string _nome){
     nome = _nome;
+}
+
+void Vertice::setCentralidadeDeGrau(unsigned _centralidadeDeGrau){
+    centralidadeDeGrau = _centralidadeDeGrau;
+}
+
+unsigned Vertice::getCentralidadeDeGrau(){
+    return centralidadeDeGrau;
 }

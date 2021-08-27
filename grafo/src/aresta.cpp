@@ -25,3 +25,9 @@ Vertice Aresta::getVerticeDestino(){
 double Aresta::getCusto(){
     return custo;
 }
+
+void Aresta::exibirNaTela(){
+    cout << getVerticeOrigem().getNome()
+        << "--" << getCusto() << "-->"
+        << getVerticeDestino().getNome() << endl;
+}

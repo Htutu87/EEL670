@@ -39,9 +39,8 @@ Grafo::Grafo(){
         linhaArquivo = linhaArquivo.erase(0,linhaArquivo.find(',') + 1/*COMPRIMENTO DELIMMITADOR*/);
         nomeVerticeDestino = linhaArquivo.substr(0, linhaArquivo.find(','));
         custoStr = linhaArquivo.substr(linhaArquivo.find(',')+1, linhaArquivo.find('\n'));
-
         custo = stod(custoStr);
-    
+
         /* PARA DEPURAÇÃO
         cout << "nomeVerticeOrigem: " << nomeVerticeOrigem << endl;
         cout << "nomeVerticeDestino: " << nomeVerticeDestino << endl;
@@ -50,6 +49,10 @@ Grafo::Grafo(){
 
         Aresta aresta(nomeVerticeOrigem, nomeVerticeDestino, custo);
         inserirAresta(aresta);
+        if (!verificarExistenciaDoVertice(aresta.getVerticeOrigem()))
+            registrarVertice(aresta.getVerticeOrigem());
+        if (!verificarExistenciaDoVertice(aresta.getVerticeDestino()))
+            registrarVertice(aresta.getVerticeDestino());
     }
     arquivo.close();
 
@@ -59,19 +62,48 @@ Grafo::Grafo(){
 
 void Grafo::inserirAresta(Aresta _aresta){
     arestas.push_back(_aresta);
-    cout << "Aresta inserida com sucesso (" << _aresta.getVerticeOrigem().getNome()
+    /*cout << "Aresta inserida com sucesso (" << _aresta.getVerticeOrigem().getNome()
         << "--" << _aresta.getCusto() << "-->"
-        << _aresta.getVerticeDestino().getNome() << ")" <<endl;
+        << _aresta.getVerticeDestino().getNome() << ")" <<endl;*/
 }
 
 void Grafo::registrarVertice(Vertice _vertice){
     vertices.push_back(_vertice);
 }
 
-void Grafo::printarVertices(){
-    cout << "----------\nVERTICES:" << endl;
-    for(auto vertice:vertices)
-        cout << vertice.getNome() << endl;
+unsigned Grafo::verificarExistenciaDoVertice(Vertice verticeAvaliado){
+
+    unsigned verticeExiste = 0;
+
+    //cout << "Verificando a existencia do vertice: " << verticeAvaliado.getNome() << endl;
+
+    for (Aresta aresta:arestas)
+        for (Vertice verticeNaLista:vertices)
+            if( verticeAvaliado.getNome() == verticeNaLista.getNome())
+                verticeExiste = 1; 
+    
+    return verticeExiste;
 }
 
-//Grafo::
+void Grafo::printarVertices(){
+    for (Vertice vertice:vertices)
+        cout << vertice.getNome() << " ";
+    cout << endl; 
+}
+
+void Grafo::printarArestas(){
+    for (Aresta aresta:arestas)
+        aresta.exibirNaTela();
+}
+
+
+unsigned Grafo::getQuantidadeVertices(){
+    return vertices.size();
+}
+
+unsigned Grafo::getQuantidadeArestas(){
+    return arestas.size();
+}
+
+void Grafo::mostrarMaiorCentralidadeDeGrau(){
+}
