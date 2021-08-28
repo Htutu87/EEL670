@@ -11,10 +11,13 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <iomanip>
 #include <fstream>
-#include <cstdlib>
+//#include <cstdlib>
 
 using namespace std;
+
+#define INFINITO 10000
 
 #endif
 

@@ -14,7 +14,10 @@ class Grafo{
         void printarArestas();
         unsigned getQuantidadeVertices();
         unsigned getQuantidadeArestas();
+        //void menorCaminhoEntre(Vertice, Vertice);
         void mostrarMaiorCentralidadeDeGrau();
+        void dijkstra(Vertice, Vertice);
+
 
     private:
         vector<Aresta> arestas;
@@ -25,3 +28,19 @@ class Grafo{
         unsigned verificarExistenciaDoVertice(Vertice);
 };
 
+namespace dijkstra{
+    class dijkstraInfo
+    {
+        public:
+            dijkstraInfo(Vertice _vAtual, Vertice _vAnt,double _c)
+            {
+                custoDesdeOrigem = _c;
+                verticeAnterior = _vAnt;
+                verticeAtual = _vAtual;
+            }
+            double custoDesdeOrigem;
+            Vertice verticeAnterior;
+            Vertice verticeAtual;
+            string nomeVerticeAtual;
+    };
+}

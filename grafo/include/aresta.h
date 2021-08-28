@@ -14,6 +14,10 @@ class Aresta{
         Vertice getVerticeDestino();
         double getCusto();
         void exibirNaTela();
+        double custoDesdeOrigem;
+        Vertice passoAnterior;
+        string visual; 
+        // MÉTODOS TEMPORÁRIOS, PARA DEPURAÇÃO
 
     private:
         Vertice verticeOrigem;

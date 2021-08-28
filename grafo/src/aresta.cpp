@@ -12,6 +12,9 @@ Aresta::Aresta(Vertice _verticeOrigem ,Vertice _verticeDestino, double _custo) :
     verticeOrigem = _verticeOrigem;
     verticeDestino = _verticeDestino;
     custo = _custo;
+
+    visual = getVerticeOrigem().getNome() + "--" + to_string(getCusto()).substr(0,3) + "-->" + getVerticeDestino().getNome();
+
 }
 
 Vertice Aresta::getVerticeOrigem(){
@@ -27,7 +30,5 @@ double Aresta::getCusto(){
 }
 
 void Aresta::exibirNaTela(){
-    cout << getVerticeOrigem().getNome()
-        << "--" << getCusto() << "-->"
-        << getVerticeDestino().getNome() << endl;
+    cout << visual << endl;
 }

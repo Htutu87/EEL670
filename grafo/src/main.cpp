@@ -7,9 +7,13 @@
 int main (int argc, char **argv) 
 {
     Grafo grafo;
-    grafo.printarArestas();
-    int op;
+//grafo.printarArestas();
+    Vertice A("A");
+    Vertice B("D");
+    grafo.dijkstra(A,B);
 
+    /* CODIGO PRINCIPAL
+    int op;
     if (argc != 2){
         cout << "Numero invalido de argumentos.\nInsira um inteiro de 1 a 6. " <<endl; 
         exit(1);
@@ -54,7 +58,7 @@ int main (int argc, char **argv)
     
     }
 
-
-
+fim do código principal
+*/ 
     return 0;
 }
